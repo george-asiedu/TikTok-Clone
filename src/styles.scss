@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #171717;
+    --color-secondary: #252525;
+    --color-pink: #ff0050;
+    --color-acqua: #00f2ea;
+    --color-loginText: #747474;
+    --color-inputColor: #3f3f3f;
+    --color-buttonHover: #c40340;
+}
+
+html {
+    font-family: "Nunito", serif; 
+}
