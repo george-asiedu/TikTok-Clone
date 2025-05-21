@@ -1,0 +1,19 @@
+<button 
+    [disabled]="isDisabled"
+    [type]="type()"
+    (click)="onClick()"
+    class="text-white tracking-wide font-medium py-2 w-full rounded-md transition duration-200 ease-in-out"
+    [ngClass]="{
+        'bg-secondary cursor-not-allowed ': isDisabled,
+        'bg-tikPink hover:bg-buttonHover cursor-pointer': !isDisabled
+    }"
+>
+    @if (!loading) {
+        {{label()}}
+    } @else {
+        <div class="flex items-center gap-4">
+            <app-spinner />
+            {{label()}}...
+        </div>
+    }
+</button>
