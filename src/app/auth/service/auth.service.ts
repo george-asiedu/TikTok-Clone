@@ -17,7 +17,7 @@ export class AuthService {
   public login(user: Login) {
     return this.http.post(`${this.authUrl}login`, user);
   }
-  public verifyAccount(code: VerifyAccount) {
-    return this.http.post(`${this.authUrl}verify-account`, code);
+  public verifyAccount(code: VerifyAccount, token: string) {
+    return this.http.post(`${this.authUrl}verify-account?token=${token}`, code);
   }
 }
