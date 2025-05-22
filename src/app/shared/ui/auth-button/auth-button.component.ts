@@ -9,17 +9,17 @@ import { SpinnerComponent } from '../spinner/spinner.component';
   styleUrl: './auth-button.component.scss'
 })
 export class AuthButtonComponent {
-  label = input('');
-  loading = input(false);
-  disabled = input(false);
-  type = input('submit');
-  clicked = output<void>();
+  public label = input('');
+  public loading = input(false);
+  public disabled = input(false);
+  public type = input('submit');
+  public clicked = output<void>();
 
-  get isDisabled(): boolean {
+  public get isDisabled(): boolean {
     return this.disabled() || this.loading();
   }
 
-  onClick() {
+  public onClick() {
     if (!this.isDisabled) {
       this.clicked.emit();
     }
