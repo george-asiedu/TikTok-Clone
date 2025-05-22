@@ -1,3 +1,5 @@
+import {HttpErrorResponse} from "@angular/common/http";
+
 export interface Signup {
     email: string;
     password: string;
@@ -50,4 +52,11 @@ export interface LoginResponse {
 
 export interface SuccessResponse {
     message: string;
+}
+
+export interface AuthState {
+    isLoading: boolean;
+    data: SignupResponse | LoginResponse | null;
+    message: SuccessResponse | null;
+    error: HttpErrorResponse | null;
 }

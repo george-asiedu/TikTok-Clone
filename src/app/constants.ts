@@ -1,3 +1,5 @@
+import {AuthState} from "./interface/auth";
+
 export const countries = [
   { name: "GH", code: "+233" },
   { name: "NG", code: "+234" },
@@ -29,3 +31,10 @@ export const IMAGES = {
 export interface ButtonStyles {
   [key: string]: boolean;
 }
+
+export const initialState: AuthState = {
+  isLoading: false,
+  error: null,
+  data: null,
+  message: null
+};
