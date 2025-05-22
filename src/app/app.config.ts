@@ -13,6 +13,8 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideHttpClient } from '@angular/common/http';
 import { NgToastModule } from 'ng-angular-popup';
 import * as AuthEffects from './auth/state/auth.effects';
+import * as Toasts from './store/toast.effects';
+import * as Routes from './store/routes.effects';
 import {authFeature} from './auth/state/auth.reducers';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 
@@ -25,7 +27,7 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(NgToastModule),
     provideStore(),
     provideState(authFeature),
-    provideEffects(AuthEffects),
+    provideEffects(AuthEffects, Toasts, Routes),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };
