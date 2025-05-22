@@ -1,6 +1,5 @@
 import {createActionGroup, emptyProps, props} from "@ngrx/store";
 import {
-    AuthState,
     Login,
     LoginResponse,
     Signup,
