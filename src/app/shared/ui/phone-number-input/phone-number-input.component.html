@@ -1,0 +1,23 @@
+<div class="flex items-center bg-secondary text-white px-4 py-2 rounded-md space-x-2 w-full">
+    <select 
+        [(ngModel)]="selectedCountryCode" 
+        (ngModelChange)="onCountryChange($event)"
+        class="bg-transparent focus:outline-none text-white pr-2"
+    >
+        @for (country of countries; track $index) {
+            <option [value]="country.code">
+                {{ country.name }} {{ country.code }}
+            </option>
+        }   
+    </select>
+
+    <div class="h-5 w-px bg-gray-600 mx-2"></div>
+
+    <input 
+        type="text" 
+        [value]="phoneNumber()" 
+        (input)="onPhoneInput($event)"
+        class="bg-transparent flex-1 focus:outline-none text-white" 
+        placeholder="55676798" 
+    />
+</div>
