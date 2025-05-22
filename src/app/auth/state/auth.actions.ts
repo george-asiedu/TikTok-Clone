@@ -1,5 +1,6 @@
 import {createActionGroup, emptyProps, props} from "@ngrx/store";
 import {
+    AuthState,
     Login,
     LoginResponse,
     Signup,
@@ -19,6 +20,7 @@ export const authActions = createActionGroup({
         'Verify Account': props<{code: VerifyAccount}>(),
         'Verify Account Success': props<{message: SuccessResponse}>(),
         'Auth Error': props<{error: HttpErrorResponse}>(),
+        'Get Auth Data': props<{data: LoginResponse}>(),
         'Logout': emptyProps()
     }
 })
