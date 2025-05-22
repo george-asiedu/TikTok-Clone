@@ -7,7 +7,7 @@ import {mapResponse} from '@ngrx/operators';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Store} from '@ngrx/store';
 import {AuthState} from '../../interface/auth';
-import {selectSignupToken} from './auth.selector';
+import {selectAuthToken} from './auth.selector';
 
 export const signupUser = createEffect(
     (actions$ = inject(Actions),
@@ -50,7 +50,7 @@ export const verifyUserAccount = createEffect(
     ) => {
         return actions$.pipe(
             ofType(authActions.verifyAccount),
-            withLatestFrom(store.select(selectSignupToken)),
+            withLatestFrom(store.select(selectAuthToken)),
             filter(([, token]) => !!token),
             switchMap(([{code}, token]) =>
                 authService.verifyAccount(code, token as string).pipe(
