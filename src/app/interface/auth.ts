@@ -37,6 +37,8 @@ export interface SignupResponse {
 export interface LoginResponse {
     message: string;
     data: {
+        accessToken: string;
+        refreshToken: string;
         user: {
             id: number;
             name: string;
@@ -46,7 +48,6 @@ export interface LoginResponse {
             dob: string;
             phone: string;
         };
-        token: string;
     };
 }
 
