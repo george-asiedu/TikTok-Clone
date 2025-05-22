@@ -4,12 +4,12 @@ import { environment } from '../../../environments/environment';
 import { Login, Signup, VerifyAccount } from '../../interface/auth';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class AuthService {
   private authUrl = `${environment.authUrl}auth/`;
 
-  public constructor(private http: HttpClient) { }
+  public constructor(private http: HttpClient) {}
 
   public signup(user: Signup) {
     return this.http.post(`${this.authUrl}signup`, user);

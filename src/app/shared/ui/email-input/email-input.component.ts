@@ -1,34 +1,34 @@
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, forwardRef, Input } from "@angular/core";
 import {
   NG_VALUE_ACCESSOR,
   NG_VALIDATORS,
   AbstractControl,
   ValidationErrors,
   Validator,
-  ControlValueAccessor
-} from '@angular/forms';
+  ControlValueAccessor,
+} from "@angular/forms";
 
 @Component({
-  selector: 'app-email-input',
+  selector: "app-email-input",
   imports: [],
-  templateUrl: './email-input.component.html',
-  styleUrl: './email-input.component.scss',
+  templateUrl: "./email-input.component.html",
+  styleUrl: "./email-input.component.scss",
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => EmailInputComponent),
-      multi: true
+      multi: true,
     },
     {
       provide: NG_VALIDATORS,
       useExisting: forwardRef(() => EmailInputComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class EmailInputComponent implements ControlValueAccessor, Validator {
-  @Input({required: true}) label: string = '';
-  public onChange = (value: string) => {};
+  @Input({ required: true }) label: string = "";
+  public onChange: (value: string) => void = () => {};
   public onTouched = () => {};
 
   public writeValue(value: string): void {
@@ -49,7 +49,7 @@ export class EmailInputComponent implements ControlValueAccessor, Validator {
     const inputElement = event.target as HTMLInputElement;
     if (inputElement) {
       this.label = inputElement.value;
-      this.onChange(this.label);
+      this.onChange(inputElement.value);
       this.onTouched();
     }
   }
