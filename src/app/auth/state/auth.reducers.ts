@@ -1,7 +1,6 @@
 import {createFeature, createReducer, on} from '@ngrx/store';
 import {initialState} from '../../constants';
 import {authActions} from "./auth.actions";
-import {state} from "@angular/animations";
 
 export const authFeature= createFeature({
     name: 'Auth',
