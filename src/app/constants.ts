@@ -17,15 +17,15 @@ export const countries = [
 ];
 
 export const IMAGES = {
-  eyeOpenImage: "public/eye-open.svg",
-  eyeCloseImage: "public/eye-close.svg",
-  settingsImage: "public/setting.svg",
-  uploadIconImage: "public/upload-icon.svg",
-  userImage: "public/user.svg",
-  searchImage: "public/search.svg",
-  blackLogoImage: "public/black-logo.svg",
-  logoImage: "public/logo.png",
-  whiteLogoImage: "public/logo2.png",
+  eyeOpenImage: "eye-open.svg",
+  eyeCloseImage: "eye-close.svg",
+  settingsImage: "setting.svg",
+  uploadIconImage: "upload-icon.svg",
+  userImage: "user.svg",
+  searchImage: "search.svg",
+  blackLogoImage: "black-logo.svg",
+  logoImage: "logo.png",
+  whiteLogoImage: "logo2.png",
 };
 
 export interface ButtonStyles {
@@ -38,3 +38,28 @@ export const initialState: AuthState = {
   data: null,
   message: null
 };
+
+export const authRoutes = {
+    login: "/auth/login",
+    signup: "/auth/signup",
+    verifyAccount: "/auth/verify-account",
+    logout: "",
+}
+
+export const pagesRoutes = {
+  forYou: ""
+}
+
+export const toastMessages = {
+  signupMessage: "Account created successfully",
+  loginMessage: "Login successful",
+  verifyAccountMessage: "Account verified successfully",
+  errorMessage: "An error occurred",
+  toastDuration: 3000,
+}
+
+export interface Tokens {
+  token?: string;
+  accessToken?: string;
+  refreshToken?: string;
+}
