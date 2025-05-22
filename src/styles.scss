@@ -13,3 +13,7 @@
 html {
     font-family: "Nunito", serif; 
 }
+
+body {
+    @apply bg-primary;
+}
